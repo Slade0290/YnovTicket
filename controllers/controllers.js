@@ -72,50 +72,51 @@ exports.findOne = (req, res) => {
 
 const Hardware = require('../models/models.js');
 
-// Find a single wcomment with an id
+// Find a single hardware with an id
 exports.findOne = (req, res) => {
-    Wcomment.findById(req.params.id)
-   .then(wcomment => {
-       if(!wcomment) {
+    Hardware.findById(req.params.id)
+   .then(hardware => {
+       if(!hardware) {
            return res.status(404).send({
-               message: "wcomment not found with id " + req.params.id
+               message: "hardware not found with id " + req.params.id
            });
        }
-       res.send(wcomment);
+       res.send(hardware);
    }).catch(err => {
        if(err.kind === 'ObjectId') {
            return res.status(404).send({
-               message: "Wcomment not found with id " + req.params.id
+               message: "Hardware not found with id " + req.params.id
            });
        }
        return res.status(500).send({
-           message: "Error retrieving wcomment with id " + req.params.id
+           message: "Error retrieving hardware with id " + req.params.id
        });
    });
 };
 
 const Software = require('../models/models.js');
 
-// Find a single wcomment with an id
+// Find a single software with an id
 exports.findOne = (req, res) => {
-    Wcomment.findById(req.params.id)
-   .then(wcomment => {
-       if(!wcomment) {
+    Software.findById(req.params.id)
+   .then(software => {
+       if(!software) {
            return res.status(404).send({
-               message: "wcomment not found with id " + req.params.id
+               message: "software not found with id " + req.params.id
            });
        }
-       res.send(wcomment);
+       res.send(software);
    }).catch(err => {
        if(err.kind === 'ObjectId') {
            return res.status(404).send({
-               message: "Wcomment not found with id " + req.params.id
+               message: "Software not found with id " + req.params.id
            });
        }
        return res.status(500).send({
-           message: "Error retrieving wcomment with id " + req.params.id
+           message: "Error retrieving software with id " + req.params.id
        });
    });
+   
 // Create and Save a new Ticket
 exports.create = (req, res) => {
     // Validate request

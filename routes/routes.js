@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 module.exports = (app) => {
     const ticket = require('../controllers/controllers.js');
     //read a ticket
@@ -19,3 +20,9 @@ module.exports = (app) => {
     //read software
     app.get('/user/:id', software.findOne);
 }
+=======
+// Create Ticket
+
+// Create a new client
+    app.post('/tickets', ticket.create);
+>>>>>>> ccce9b464fb36b92896f1f0200146410e24c91e5

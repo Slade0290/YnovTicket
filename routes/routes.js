@@ -1,7 +1,13 @@
 
 
+// CREATE ----------------------------------------------------------------------------
 
-// UPDATE
+// Create Ticket
+app.post('/tickets', ticket.create);
+
+
+
+// UPDATE ----------------------------------------------------------------------------
 
 // Update Ticket
 router.put('/:id/update', ticket_controller.ticket_update);

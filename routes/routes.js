@@ -2,7 +2,16 @@
 // CREATE ----------------------------------------------------------------------------
 
 // Create Ticket
-    app.post('/tickets', ticket.create);
+app.post('/tickets', ticket.create);
+
+// Create User
+app.post('/users', user.create);
+
+// Create Hardware
+app.post('/hards', hard.create);
+
+// Create Software
+app.post('/softs', soft.create);
 
 // READ ----------------------------------------------------------------------------
 

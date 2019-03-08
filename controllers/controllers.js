@@ -1,37 +1,75 @@
 
 // CREATE ----------------------------------------------------------------------------
 
-// Create and Save a new Ticket
-exports.create = (req, res) => {
- // Validate request
- if(!req.body.enterprise) {
-     return res.status(400).send({
-         message: "ticket content can not be empty"
-     });
- }
- // Create a ticket
- const ticket = new Ticket({
-     // enterprise: req.body.enterprise || "Untitled Compagny",
-     // street: req.body.street,
-     // city: req.body.city,
-     // codepostal: req.body.codepostal,
-     // name: req.body.name,
-     // firstname: req.body.firstname,
-     // phonenumber: req.body.phonenumber,
-     // email: req.body.email,
-     // activities:req.body.activities,
-     // project: req.body.project
- });
- // Save ticket in the database
- ticket.save()
- .then(data => {
-     res.send(data);
-     }).catch(err => {
-         res.status(500).send({
-         message: err.message || "Some error occurred while creating the ticket."
-         });
-     });
- };
+// TICKET
+exports.ticket_create = function (req, res) {
+    let ticket = new ticket(
+        {
+            // name: req.body.name,
+            // price: req.body.price
+        }
+    );
+
+    ticket.save(function (err) {
+        if (err) {
+            return next(err);
+        }
+        res.send('Ticket Created successfully')
+    })
+};
+
+
+// USER
+exports.user_create = function (req, res) {
+    let user = new user(
+        {
+            // name: req.body.name,
+            // price: req.body.price
+        }
+    );
+
+    user.save(function (err) {
+        if (err) {
+            return next(err);
+        }
+        res.send('User Created successfully')
+    })
+};
+
+
+// HARDWARE
+exports.hard_create = function (req, res) {
+    let hard = new hard(
+        {
+            // name: req.body.name,
+            // price: req.body.price
+        }
+    );
+
+    hard.save(function (err) {
+        if (err) {
+            return next(err);
+        }
+        res.send('HardWare Created successfully')
+    })
+};
+
+// SOFTWARE
+exports.soft_create = function (req, res) {
+    let soft = new soft(
+        {
+            // name: req.body.name,
+            // price: req.body.price
+        }
+    );
+
+    soft.save(function (err) {
+        if (err) {
+            return next(err);
+        }
+        res.send('SoftWare Created successfully')
+    })
+};
 
 // READ ----------------------------------------------------------------------------
 const Ticket = require('../models/models.js');

@@ -5,8 +5,17 @@
 exports.ticket_create = function (req, res) {
     let ticket = new ticket(
         {
-            // name: req.body.name,
-            // price: req.body.price
+            id : req.body.id,
+            title : req.body.title,
+            description : req.body.description,
+            type : req.body.type,
+            dateCreation : req.body.dateCreation,
+            lastUpdate : req.body.lastUpdate,
+            priority : req.body.priority,
+            status : req.body.status,
+            author : req.body.author,
+            supportName : req.body.supportName
+            //Commentaire ici ? ou un objet à part ?
         }
     );
 
@@ -23,8 +32,15 @@ exports.ticket_create = function (req, res) {
 exports.user_create = function (req, res) {
     let user = new user(
         {
-            // name: req.body.name,
-            // price: req.body.price
+            id : req.body.id,
+            userType : req.body.userType,
+            admin : req.body.admin,
+            fname : req.body.fname,
+            lname : req.body.lname,
+            email : req.body.email,
+            department : req.body.department,
+            company : req.body.company,
+            endContract : req.body.endContract
         }
     );
 
@@ -41,8 +57,13 @@ exports.user_create = function (req, res) {
 exports.hard_create = function (req, res) {
     let hard = new hard(
         {
-            // name: req.body.name,
-            // price: req.body.price
+            type : req.body.type,
+            beginDate : req.body.beginDate,
+            marque : req.body.marque,
+            modele : req.body.modele,
+            addressIP : req.body.addressIP,
+            soft : req.body.soft,
+            status : req.body.status
         }
     );
 
@@ -58,8 +79,9 @@ exports.hard_create = function (req, res) {
 exports.soft_create = function (req, res) {
     let soft = new soft(
         {
-            // name: req.body.name,
-            // price: req.body.price
+            software : req.body.software,
+            licence : req.body.licence,
+            supportAvailable : req.body.supportAvailable
         }
     );
 
@@ -80,7 +102,7 @@ exports.findOne = (req, res) => {
    .then(ticket => {
        if(!ticket) {
            return res.status(404).send({
-               message: "wcomment not found with id " + req.params.id
+               message: "Comment not found with id " + req.params.id
            });
        }
        res.send(ticket);
@@ -152,7 +174,7 @@ exports.findOne = (req, res) => {
    .then(hardware => {
        if(!hardware) {
            return res.status(404).send({
-               message: "hardware not found with id " + req.params.id
+               message: "Hardware not found with id " + req.params.id
            });
        }
        res.send(hardware);

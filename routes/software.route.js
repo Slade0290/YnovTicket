@@ -9,6 +9,6 @@ module.exports = (app) => {
     app.get('/software/:id', software.findOne);
 
     // Update Software
-    app.put('/:id/update', software.software_update);
+    app.put('/software/:id', software.software_update);
 
 }

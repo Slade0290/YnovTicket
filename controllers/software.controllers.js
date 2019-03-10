@@ -5,7 +5,7 @@ const Software = require('../models/software.models.js');
 
 // SOFTWARE
 exports.software_create = function (req, res) {
-    let soft = new Software(
+    const soft = new Software(
         {
             software : req.body.software,
             licence : req.body.licence,

@@ -9,6 +9,6 @@ module.exports = (app) => {
     app.get('/comment/:id', comment.findOne);
 
     // Update Comment
-    app.put('/:id/update', comment.comment_update);
+    app.put('/comment/:id', comment.comment_update);
 
 }

@@ -3,9 +3,8 @@
 
 // COMMENT
 exports.comment_create = function (req, res) {
-    let comment = new Comment(
+    const comment = new Comment(
         {
-            //id : req.body.id,
             author : req.body.author,
             message : req.body.message,
             date : req.body.date
@@ -30,7 +29,7 @@ exports.findOne = (req, res) => {
    .then(comment => {
        if(!comment) {
            return res.status(404).send({
-               message: "comment not found with id " + req.params.id
+               message: "Comment not found with id " + req.params.id
            });
        }
        res.send(comment);

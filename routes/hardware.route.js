@@ -9,6 +9,6 @@ module.exports = (app) => {
     app.get('/hardware/:id', hardware.findOne);
 
     // Update Hardware
-    app.put('/:id/update', hardware.hardware_update);
+    app.put('/hardware/:id', hardware.hardware_update);
 
 }

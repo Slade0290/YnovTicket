@@ -19,7 +19,7 @@ exports.ticket_create = function (req, res) {
             comment : req.body.comment
         }
     );
-    
+
     ticket.save(function (err) {
         if (err) {
             return next(err);
@@ -59,6 +59,6 @@ exports.findOne = (req, res) => {
 exports.ticket_update = function (req, res) {
     Ticket.findByIdAndUpdate(req.params.id, {$set: req.body}, function (err, ticket) {
         if (err) return next(err);
-        res.send('Ticket udpated.');
+        res.send('Ticket updated.');
     });
 };

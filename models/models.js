@@ -1,3 +1,6 @@
+
+const mongoose = require('mongoose');
+
 // Ticket model
 const TicketSchema = mongoose.Schema({
     id : Number,

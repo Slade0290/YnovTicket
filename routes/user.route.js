@@ -7,6 +7,7 @@ module.exports = (app) => {
 
     //Read User
     app.get('/user/:id', user.findOne);
+    app.get('/users', user.findAll);
 
     // Update User
     app.put('/user/:id', user.user_update);

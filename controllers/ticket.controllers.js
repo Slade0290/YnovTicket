@@ -53,6 +53,18 @@ exports.findOne = (req, res) => {
    });
 };
 
+// Retrieve and return all worker from the database.
+exports.findAll = (req, res) => {
+    Ticket.find()
+    .then(tickets => {
+        res.send(tickets);
+    }).catch(err => {
+        res.status(500).send({
+            message: err.message || "Some error occurred while retrieving tickets."
+        });
+    });
+};
+
 // UPDATE ----------------------------------------------------------------------------
 
 // Ticket Update

@@ -1,24 +1,14 @@
 
-const express = require('express');
-//const router = express.Router();
-const app = express.Router();
-const comment = require('../controllers/comment.controllers.js');
+module.exports = (app) => {
+    const comment = require('../controllers/comment.controllers.js');
 
-// CREATE ----------------------------------------------------------------------------
+    // Create Comment
+    app.post('/comment', comment.comment_create);
 
-// Create Comment
-app.post('/comment', comment.comment_create);
+    //Read Comment
+    app.get('/comment/:id', comment.findOne);
 
-// READ ----------------------------------------------------------------------------
+    // Update Comment
+    app.put('/:id/update', comment.comment_update);
 
-//Read a comment
-app.get('/comment/:id', comment.findOne);
-
-// UPDATE ----------------------------------------------------------------------------
-
-// Update Comment
-app.put('/:id/update', comment.comment_update);
-
-// EXPORT ----------------------------------------------------------------------------
-
-module.exports = app;
+}

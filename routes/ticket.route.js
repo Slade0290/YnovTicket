@@ -17,7 +17,7 @@ app.get('/ticket/:id', ticket.findOne);
 // UPDATE ----------------------------------------------------------------------------
 
 // Update Ticket
-router.put('/:id/update', ticket_controller.ticket_update);
+app.put('/:id/update', ticket.ticket_update);
 
 // EXPORT ----------------------------------------------------------------------------
 

@@ -17,7 +17,7 @@ app.get('/comment/:id', comment.findOne);
 // UPDATE ----------------------------------------------------------------------------
 
 // Update Comment
-router.put('/:id/update', comment_controller.comment_update);
+app.put('/:id/update', comment.comment_update);
 
 // EXPORT ----------------------------------------------------------------------------
 

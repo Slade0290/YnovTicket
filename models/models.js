@@ -40,7 +40,7 @@ const UserSchema = mongoose.Schema({
     admin : Boolean,
     fname : String,
     lname : String,
-    email : Email,
+    email : String,
     department : String,
     company : String,
     endContract : Date

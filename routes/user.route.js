@@ -17,7 +17,7 @@ app.get('/user/:id', user.findOne);
 // UPDATE ----------------------------------------------------------------------------
 
 // Update User
-router.put('/:id/update', user_controller.user_update);
+app.put('/:id/update', user.user_update);
 
 // EXPORT ----------------------------------------------------------------------------
 

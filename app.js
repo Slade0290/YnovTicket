@@ -3,19 +3,13 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const app = express();
 
-const ticket = require('./routes/ticket.route');
-const comment = require('./routes/comment.route');
-const user = require('./routes/user.route');
-const hardware = require('./routes/hardware.route');
-const software = require('./routes/software.route');
-app.use('/tickets', ticket);
-app.use('/comments', comment);
-app.use('/users', user);
-app.use('/hardwares', hardware);
-app.use('/softwares', software);
+require('./routes/ticket.route')(app);
+require('./routes/comment.route')(app);
+require('./routes/user.route')(app);
+require('./routes/hardware.route')(app);
+require('./routes/software.route')(app);
 
 app.use(bodyParser.urlencoded({ extended: true}));
-
 app.use(bodyParser.json());
 
 app.use(function(req, res, next) {

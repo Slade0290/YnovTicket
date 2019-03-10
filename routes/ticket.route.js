@@ -7,6 +7,7 @@ module.exports = (app) => {
 
     //Read Ticket
     app.get('/ticket/:id', ticket.findOne);
+    app.get('/tickets',ticket.findAll)
 
     // Update Ticket
     app.put('/ticket/:id', ticket.ticket_update);

@@ -34,17 +34,15 @@ const UserSchema = mongoose.Schema({
 module.exports = mongoose.model('Ticket', TicketSchema);
 
 // Hardware model
-const TicketSchema = mongoose.Schema({
+const HardwareSchema = mongoose.Schema({
     id : Number,
-    title : String,
-    description : String,
     type : String,
-    dateCreation : Date,
-    lastUpdate : Date,
-    priority : String,
-    status : String,
-    author : String,
-    supportName : String
+    beginDate : Date,
+    marque : String,
+    modele : String,
+    addressIP : String,
+    soft : String,
+    status : String
 }, {
     timestamps: true
 });
@@ -52,17 +50,11 @@ const TicketSchema = mongoose.Schema({
 module.exports = mongoose.model('Ticket', TicketSchema);
 
 // Software model
-const TicketSchema = mongoose.Schema({
+const SoftwareSchema = mongoose.Schema({
     id : Number,
-    title : String,
-    description : String,
-    type : String,
-    dateCreation : Date,
-    lastUpdate : Date,
-    priority : String,
-    status : String,
-    author : String,
-    supportName : String
+    software : String,
+    licence : String,
+    supportAvailable : Date
 }, {
     timestamps: true
 });

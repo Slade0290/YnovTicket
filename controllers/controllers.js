@@ -57,6 +57,7 @@ exports.user_create = function (req, res) {
 exports.hard_create = function (req, res) {
     let hard = new hard(
         {
+            id : req.body.id,
             type : req.body.type,
             beginDate : req.body.beginDate,
             marque : req.body.marque,
@@ -79,6 +80,7 @@ exports.hard_create = function (req, res) {
 exports.soft_create = function (req, res) {
     let soft = new soft(
         {
+            id : req.body.id,
             software : req.body.software,
             licence : req.body.licence,
             supportAvailable : req.body.supportAvailable

@@ -1,4 +1,4 @@
-
+const Comment = require('../models/comment.models.js');
 // CREATE ----------------------------------------------------------------------------
 
 // COMMENT
@@ -21,7 +21,18 @@ exports.comment_create = function (req, res) {
 
 // READ ----------------------------------------------------------------------------
 
-const Comment = require('../models/comment.models.js');
+// Find all Comments
+exports.findAll = (req, res) => {
+
+    Comment.find()
+    .then(comments => {
+        res.send(comments);
+    }).catch(err => {
+        res.status(500).send({
+            message: err.message || "Comments not found"
+        });
+    });
+};
 
 // Find a single comment with an id
 exports.findOne = (req, res) => {

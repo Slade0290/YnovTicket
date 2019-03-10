@@ -2,7 +2,6 @@ const mongoose = require('mongoose');
 
 // User model
 const UserSchema = mongoose.Schema({
-    //id : Number,
     userType : String,
     admin : Boolean,
     fname : String,

@@ -1,11 +1,12 @@
 
+const User = require('../models/user.models.js');
+
 // CREATE ----------------------------------------------------------------------------
 
 // USER
 exports.user_create = function (req, res) {
-    let user = new User(
+    const user = new User(
         {
-            //id : req.body.id,
             userType : req.body.userType,
             admin : req.body.admin,
             fname : req.body.fname,
@@ -26,8 +27,6 @@ exports.user_create = function (req, res) {
 };
 
 // READ ----------------------------------------------------------------------------
-
-const User = require('../models/user.models.js');
 
 // Find a single user with an id
 exports.findOne = (req, res) => {

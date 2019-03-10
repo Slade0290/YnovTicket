@@ -9,6 +9,6 @@ module.exports = (app) => {
     app.get('/user/:id', user.findOne);
 
     // Update User
-    app.put('/:id/update', user.user_update);
+    app.put('/user/:id', user.user_update);
 
 }

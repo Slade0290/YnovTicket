@@ -3,7 +3,7 @@
 
 // HARDWARE
 exports.hardware_create = function (req, res) {
-    let hardware = new Hardware(
+    const hardware = new Hardware(
         {
             //id : req.body.id,
             type : req.body.type,

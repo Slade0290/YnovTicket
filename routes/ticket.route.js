@@ -9,6 +9,6 @@ module.exports = (app) => {
     app.get('/ticket/:id', ticket.findOne);
 
     // Update Ticket
-    app.put('/:id/update', ticket.ticket_update);
+    app.put('/ticket/:id', ticket.ticket_update);
 
 }

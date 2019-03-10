@@ -3,8 +3,16 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const app = express();
 
-const ticket = require('./routes/routes');
+const ticket = require('./routes/ticket.route');
+const comment = require('./routes/comment.route');
+const user = require('./routes/user.route');
+const hardware = require('./routes/hardware.route');
+const software = require('./routes/software.route');
 app.use('/tickets', ticket);
+app.use('/comments', comment);
+app.use('/users', user);
+app.use('/hardwares', hardware);
+app.use('/softwares', software);
 
 app.use(bodyParser.urlencoded({ extended: true}));
 

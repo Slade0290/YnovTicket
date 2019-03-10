@@ -7,7 +7,6 @@ exports.hardware_create = function (req, res) {
         {
             //id : req.body.id,
             type : req.body.type,
-            beginDate : req.body.beginDate,
             marque : req.body.marque,
             modele : req.body.modele,
             addressIP : req.body.addressIP,

@@ -3,7 +3,6 @@ const mongoose = require('mongoose');
 // Hardware model
 const HardwareSchema = mongoose.Schema({
     type : String,
-    beginDate : Date,
     marque : String,
     modele : String,
     addressIP : String,

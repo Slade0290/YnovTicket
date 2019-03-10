@@ -50,6 +50,18 @@ exports.findOne = (req, res) => {
    });
 };
 
+
+exports.findAll = (req, res) => {
+    Hardware.find()
+    .then(hardware => {
+        res.send(hardware);
+    }).catch(err => {
+        res.status(500).send({
+            message: err.message || "Some error occurred while retrieving hardware."
+        });
+    });
+};
+
 // UPDATE ----------------------------------------------------------------------------
 
 // Hardware Update

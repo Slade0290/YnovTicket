@@ -8,6 +8,9 @@ module.exports = (app) => {
     //Read Hardware
     app.get('/hardware/:id', hardware.findOne);
 
+    //Read Hardware
+    app.get('/hardware', hardware.findAll);
+
     // Update Hardware
     app.put('/hardware/:id', hardware.hardware_update);
 

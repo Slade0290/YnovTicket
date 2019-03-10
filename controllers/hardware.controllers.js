@@ -3,7 +3,7 @@
 
 // HARDWARE
 exports.hard_create = function (req, res) {
-    let hard = new hard(
+    let hardware = new hardware(
         {
             id : req.body.id,
             type : req.body.type,
@@ -16,7 +16,7 @@ exports.hard_create = function (req, res) {
         }
     );
 
-    hard.save(function (err) {
+    hardware.save(function (err) {
         if (err) {
             return next(err);
         }

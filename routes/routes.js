@@ -17,23 +17,23 @@ app.post('/softs', soft.create);
 
 module.exports = (app) => {
     const ticket = require('../controllers/ticket.controllers.js');
-    //read a ticket
+    //Read a ticket
     app.get('/ticket/:id', ticket.findOne);
 
     const user = require('../controllers/user.controllers.js');
-    //read user
+    //Read user
     app.get('/user/:id', user.findOne);
 
     const comment = require('../controllers/comment.controllers.js');
-    //read a comment
+    //Read a comment
     app.get('/comment/:id', comment.findOne);
 
     const hardware = require('../controllers/hardware.controllers.js');
-    //read hardware
+    //Read hardware
     app.get('/hardware/:id', hardware.findOne);
 
     const software = require('../controllers/software.controllers.js');
-    //read software
+    //Read software
     app.get('/software/:id', software.findOne);
 }
 

@@ -37,7 +37,7 @@ exports.findOne = (req, res) => {
    .then(ticket => {
        if(!ticket) {
            return res.status(404).send({
-               message: "Comment not found with id " + req.params.id
+               message: "Ticket not found with id " + req.params.id
            });
        }
        res.send(ticket);

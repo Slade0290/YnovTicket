@@ -8,7 +8,7 @@ exports.comment_create = function (req, res) {
             id : req.body.id,
             author : req.body.author,
             message : req.body.message,
-            date : req.bodydate
+            date : req.body.date
         }
     );
 
@@ -47,7 +47,6 @@ exports.findOne = (req, res) => {
 };
 
 // UPDATE ----------------------------------------------------------------------------
-
 
 // Comment Update
 exports.comment_update = function (req, res) {

@@ -35,14 +35,14 @@ exports.findOne = (req, res) => {
    .then(user => {
        if(!user) {
            return res.status(404).send({
-               message: "user not found with id " + req.params.id
+               message: "User not found with id " + req.params.id
            });
        }
        res.send(user);
    }).catch(err => {
        if(err.kind === 'ObjectId') {
            return res.status(404).send({
-               message: "user not found with id " + req.params.id
+               message: "User not found with id " + req.params.id
            });
        }
        return res.status(500).send({

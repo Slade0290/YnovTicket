@@ -2,7 +2,7 @@
 // CREATE ----------------------------------------------------------------------------
 
 // HARDWARE
-exports.hard_create = function (req, res) {
+exports.hardware_create = function (req, res) {
     let hardware = new hardware(
         {
             id : req.body.id,

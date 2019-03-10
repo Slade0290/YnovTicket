@@ -15,16 +15,19 @@ module.exports = app;
 // CREATE ----------------------------------------------------------------------------
 
 // Create Ticket
-app.post('/ticket', ticket.create);
+app.post('/ticket', ticket.ticket_create);
+
+// Create Comment
+app.post('/comment', comment.comment_create);
 
 // Create User
-app.post('/user', user.create);
+app.post('/user', user.user_create);
 
 // Create Hardware
-app.post('/hardware', hard.create);
+app.post('/hardware', hardware.hardware_create);
 
 // Create Software
-app.post('/software', soft.create);
+app.post('/software', software.software_create);
 
 // READ ----------------------------------------------------------------------------
 

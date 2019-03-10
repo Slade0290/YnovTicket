@@ -2,7 +2,7 @@
 // CREATE ----------------------------------------------------------------------------
 
 // SOFTWARE
-exports.soft_create = function (req, res) {
+exports.software_create = function (req, res) {
     let soft = new soft(
         {
             id : req.body.id,

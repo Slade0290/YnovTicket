@@ -22,7 +22,8 @@ const CommentSchema = mongoose.Schema({
     id : Number,
     author : String,
     message : String,
-    date : Date
+    date : Date,
+    attachment : String
 }, {
     timestamps: true
 });

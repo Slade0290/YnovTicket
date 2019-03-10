@@ -23,6 +23,19 @@ exports.software_create = function (req, res) {
 
 // READ ----------------------------------------------------------------------------
 
+// Find all software
+exports.findAll = (req, res) => {
+
+    Software.find()
+    .then(softwares => {
+        res.send(softwares);
+    }).catch(err => {
+        res.status(500).send({
+            message: err.message || "softwares not found"
+        });
+    });
+};
+
 // Find a single software with an id
 exports.findOne = (req, res) => {
     Software.findById(req.params.id)

@@ -2,6 +2,9 @@
 module.exports = (app) => {
     const software = require('../controllers/software.controllers.js');
 
+    //Read all software
+    app.get('/software' , software.findAll)
+
     // Create Software
     app.post('/software', software.software_create);
 

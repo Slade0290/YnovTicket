@@ -2,6 +2,9 @@
 module.exports = (app) => {
     const comment = require('../controllers/comment.controllers.js');
 
+    //Read all comment
+    app.get('/comment', comment.findAll)
+
     // Create Comment
     app.post('/comment', comment.comment_create);
 

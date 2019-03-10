@@ -1,4 +1,6 @@
 
+const Ticket = require('../models/models.js');
+
 // CREATE ----------------------------------------------------------------------------
 
 // TICKET
@@ -28,8 +30,6 @@ exports.ticket_create = function (req, res) {
 };
 
 // READ ----------------------------------------------------------------------------
-
-const Ticket = require('../models/models.js');
 
 // Find a single ticket with an id
 exports.findOne = (req, res) => {

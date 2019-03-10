@@ -3,6 +3,9 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const app = express();
 
+const ticket = require('./routes/routes');
+app.use('/tickets', ticket);
+
 app.use(bodyParser.urlencoded({ extended: true}));
 
 app.use(bodyParser.json());

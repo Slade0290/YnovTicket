@@ -1,24 +1,14 @@
 
-const express = require('express');
-//const router = express.Router();
-const app = express.Router();
-const hardware = require('../controllers/hardware.controllers.js');
+module.exports = (app) => {
+    const hardware = require('../controllers/hardware.controllers.js');
 
-// CREATE ----------------------------------------------------------------------------
+    // Create Hardware
+    app.post('/hardware', hardware.hardware_create);
 
-// Create Hardware
-app.post('/hardware', hardware.hardware_create);
+    //Read Hardware
+    app.get('/hardware/:id', hardware.findOne);
 
-// READ ----------------------------------------------------------------------------
+    // Update Hardware
+    app.put('/:id/update', hardware.hardware_update);
 
-//Read hardware
-app.get('/hardware/:id', hardware.findOne);
-
-// UPDATE ----------------------------------------------------------------------------
-
-// Update Hardware
-app.put('/:id/update', hardware.hardware_update);
-
-// EXPORT ----------------------------------------------------------------------------
-
-module.exports = app;
+}

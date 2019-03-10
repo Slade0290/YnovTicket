@@ -1,24 +1,14 @@
 
-const express = require('express');
-//const router = express.Router();
-const app = express.Router();
-const software = require('../controllers/software.controllers.js');
+module.exports = (app) => {
+    const software = require('../controllers/software.controllers.js');
 
-// CREATE ----------------------------------------------------------------------------
+    // Create Software
+    app.post('/software', software.software_create);
 
-// Create Software
-app.post('/software', software.software_create);
+    //Read Software
+    app.get('/software/:id', software.findOne);
 
-// READ ----------------------------------------------------------------------------
+    // Update Software
+    app.put('/:id/update', software.software_update);
 
-//Read software
-app.get('/software/:id', software.findOne);
-
-// UPDATE ----------------------------------------------------------------------------
-
-// Update Software
-app.put('/:id/update', software.software_update);
-
-// EXPORT ----------------------------------------------------------------------------
-
-module.exports = app;
+}

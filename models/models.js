@@ -10,7 +10,7 @@ const TicketSchema = mongoose.Schema({
     status : String,
     author : String,
     supportName : String,
-    comment : Number[]
+    comment : {type : Array, "Number" : [] }
 }, {
     timestamps: true
 });

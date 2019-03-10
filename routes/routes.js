@@ -1,41 +1,47 @@
 
+const express = require('express');
+//const router = express.Router();
+const app = express.Router();
+
+const ticket = require('../controllers/ticket.controllers.js');
+const user = require('../controllers/user.controllers.js');
+const comment = require('../controllers/comment.controllers.js');
+const hardware = require('../controllers/hardware.controllers.js');
+const software = require('../controllers/software.controllers.js');
+
+module.exports = app;
+
+
 // CREATE ----------------------------------------------------------------------------
 
 // Create Ticket
-app.post('/tickets', ticket.create);
+app.post('/ticket', ticket.create);
 
 // Create User
-app.post('/users', user.create);
+app.post('/user', user.create);
 
 // Create Hardware
-app.post('/hards', hard.create);
+app.post('/hardware', hard.create);
 
 // Create Software
-app.post('/softs', soft.create);
+app.post('/software', soft.create);
 
 // READ ----------------------------------------------------------------------------
 
-module.exports = (app) => {
-    const ticket = require('../controllers/ticket.controllers.js');
-    //Read a ticket
-    app.get('/ticket/:id', ticket.findOne);
+//Read a ticket
+app.get('/ticket/:id', ticket.findOne);
 
-    const user = require('../controllers/user.controllers.js');
-    //Read user
-    app.get('/user/:id', user.findOne);
+//Read user
+app.get('/user/:id', user.findOne);
 
-    const comment = require('../controllers/comment.controllers.js');
-    //Read a comment
-    app.get('/comment/:id', comment.findOne);
+//Read a comment
+app.get('/comment/:id', comment.findOne);
 
-    const hardware = require('../controllers/hardware.controllers.js');
-    //Read hardware
-    app.get('/hardware/:id', hardware.findOne);
+//Read hardware
+app.get('/hardware/:id', hardware.findOne);
 
-    const software = require('../controllers/software.controllers.js');
-    //Read software
-    app.get('/software/:id', software.findOne);
-}
+//Read software
+app.get('/software/:id', software.findOne);
 
 // UPDATE ----------------------------------------------------------------------------
 

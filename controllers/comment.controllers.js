@@ -3,7 +3,7 @@
 
 // COMMENT
 exports.comment_create = function (req, res) {
-    let comment = new comment(
+    let comment = new Comment(
         {
             id : req.body.id,
             author : req.body.author,
@@ -22,7 +22,7 @@ exports.comment_create = function (req, res) {
 
 // READ ----------------------------------------------------------------------------
 
-const Comment = require('../models/models.js');
+const Comment = require('../models/comment.models.js');
 
 // Find a single comment with an id
 exports.findOne = (req, res) => {

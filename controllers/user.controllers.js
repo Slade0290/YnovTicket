@@ -3,7 +3,7 @@
 
 // USER
 exports.user_create = function (req, res) {
-    let user = new user(
+    let user = new User(
         {
             id : req.body.id,
             userType : req.body.userType,
@@ -27,7 +27,7 @@ exports.user_create = function (req, res) {
 
 // READ ----------------------------------------------------------------------------
 
-const User = require('../models/models.js');
+const User = require('../models/user.models.js');
 
 // Find a single user with an id
 exports.findOne = (req, res) => {

@@ -17,7 +17,7 @@ app.get('/software/:id', software.findOne);
 // UPDATE ----------------------------------------------------------------------------
 
 // Update Software
-router.put('/:id/update', software_controller.software_update);
+app.put('/:id/update', software.software_update);
 
 // EXPORT ----------------------------------------------------------------------------
 

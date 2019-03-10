@@ -3,7 +3,7 @@
 
 // SOFTWARE
 exports.software_create = function (req, res) {
-    let soft = new soft(
+    let soft = new Software(
         {
             id : req.body.id,
             software : req.body.software,
@@ -22,7 +22,7 @@ exports.software_create = function (req, res) {
 
 // READ ----------------------------------------------------------------------------
 
-const Software = require('../models/models.js');
+const Software = require('../models/software.models.js');
 
 // Find a single software with an id
 exports.findOne = (req, res) => {

@@ -17,7 +17,7 @@ app.get('/hardware/:id', hardware.findOne);
 // UPDATE ----------------------------------------------------------------------------
 
 // Update Hardware
-router.put('/:id/update', hardware_controller.hardware_update);
+app.put('/:id/update', hardware.hardware_update);
 
 // EXPORT ----------------------------------------------------------------------------
 

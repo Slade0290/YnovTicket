@@ -1,11 +1,11 @@
 
-const Ticket = require('../models/models.js');
+const Ticket = require('../models/ticket.models.js');
 
 // CREATE ----------------------------------------------------------------------------
 
 // TICKET
 exports.ticket_create = function (req, res) {
-    let ticket = new ticket(
+    let ticket = new Ticket(
         {
             id : req.body.id,
             title : req.body.title,

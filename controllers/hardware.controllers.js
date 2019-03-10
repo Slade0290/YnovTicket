@@ -3,7 +3,7 @@
 
 // HARDWARE
 exports.hardware_create = function (req, res) {
-    let hardware = new hardware(
+    let hardware = new Hardware(
         {
             id : req.body.id,
             type : req.body.type,
@@ -26,7 +26,7 @@ exports.hardware_create = function (req, res) {
 
 // READ ----------------------------------------------------------------------------
 
-const Hardware = require('../models/models.js');
+const Hardware = require('../models/hardware.models.js');
 
 // Find a single hardware with an id
 exports.findOne = (req, res) => {

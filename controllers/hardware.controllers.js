@@ -5,7 +5,7 @@
 exports.hardware_create = function (req, res) {
     let hardware = new Hardware(
         {
-            id : req.body.id,
+            //id : req.body.id,
             type : req.body.type,
             beginDate : req.body.beginDate,
             marque : req.body.marque,

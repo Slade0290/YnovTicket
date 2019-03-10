@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 // User model
 const UserSchema = mongoose.Schema({
-    id : Number,
+    //id : Number,
     userType : String,
     admin : Boolean,
     fname : String,
@@ -10,7 +10,7 @@ const UserSchema = mongoose.Schema({
     email : String,
     department : String,
     company : String,
-    endContract : Date
+    endContract : Date,
 }, {
     timestamps: true
 });

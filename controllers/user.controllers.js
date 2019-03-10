@@ -5,7 +5,7 @@
 exports.user_create = function (req, res) {
     let user = new User(
         {
-            id : req.body.id,
+            //id : req.body.id,
             userType : req.body.userType,
             admin : req.body.admin,
             fname : req.body.fname,

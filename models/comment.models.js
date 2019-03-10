@@ -2,11 +2,10 @@ const mongoose = require('mongoose');
 
 // Comment model
 const CommentSchema = mongoose.Schema({
-    id : Number,
     author : String,
     message : String,
     date : Date,
-    attachment : String
+    attachment : String,
 }, {
     timestamps: true
 });

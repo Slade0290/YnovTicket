@@ -1,13 +1,6 @@
 const express = require('express');
-const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const app = express();
-
-require('./routes/ticket.route')(app);
-require('./routes/comment.route')(app);
-require('./routes/user.route')(app);
-require('./routes/hardware.route')(app);
-require('./routes/software.route')(app);
 
 app.use(bodyParser.urlencoded({ extended: true}));
 app.use(bodyParser.json());
@@ -21,16 +14,27 @@ app.use(function(req, res, next) {
     next();
 });
 
-//connecting to the db
-mongoose.connect('mongodb://pota:b3cticketsup@ds361085.mlab.com:61085/ticketsup', {
+// Configuring the database
+const dbConfig = require('./config/database.config.js');
+const mongoose = require('mongoose');
+
+mongoose.Promise = global.Promise;
+
+// Connecting to the database
+mongoose.connect(dbConfig.url, {
     useNewUrlParser: true
 }).then(() => {
     console.log("Successfully connected to the database");
 }).catch(err => {
-    console.log('Could not connect to the database');
+    console.log('Could not connect to the database. Exiting now...', err);
     process.exit();
 });
 
+require('./routes/ticket.route')(app);
+require('./routes/comment.route')(app);
+require('./routes/user.route')(app);
+require('./routes/hardware.route')(app);
+require('./routes/software.route')(app);
 
 //listening to request
 app.listen(3000, () => {

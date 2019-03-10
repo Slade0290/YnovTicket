@@ -5,7 +5,7 @@
 exports.comment_create = function (req, res) {
     let comment = new Comment(
         {
-            id : req.body.id,
+            //id : req.body.id,
             author : req.body.author,
             message : req.body.message,
             date : req.body.date

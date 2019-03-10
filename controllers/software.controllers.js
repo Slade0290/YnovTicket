@@ -1,11 +1,12 @@
 
+const Software = require('../models/software.models.js');
+
 // CREATE ----------------------------------------------------------------------------
 
 // SOFTWARE
 exports.software_create = function (req, res) {
     let soft = new Software(
         {
-            id : req.body.id,
             software : req.body.software,
             licence : req.body.licence,
             supportAvailable : req.body.supportAvailable
@@ -21,8 +22,6 @@ exports.software_create = function (req, res) {
 };
 
 // READ ----------------------------------------------------------------------------
-
-const Software = require('../models/software.models.js');
 
 // Find a single software with an id
 exports.findOne = (req, res) => {

@@ -2,7 +2,6 @@ const mongoose = require('mongoose');
 
 // Ticket model
 const TicketSchema = mongoose.Schema({
-    id : Number,
     title : String,
     description : String,
     type : String,
@@ -12,7 +11,7 @@ const TicketSchema = mongoose.Schema({
     status : String,
     author : String,
     supportName : String,
-    comment : {type : Array, "Number" : [] }
+    comment : {type : Array, "Number" : [] },
 }, {
     timestamps: true
 });

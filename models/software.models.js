@@ -2,10 +2,9 @@ const mongoose = require('mongoose');
 
 // Software model
 const SoftwareSchema = mongoose.Schema({
-    id : Number,
     software : String,
     licence : String,
-    supportAvailable : Date
+    supportAvailable : Date,
 }, {
     timestamps: true
 });

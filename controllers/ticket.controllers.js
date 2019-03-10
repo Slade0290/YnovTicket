@@ -5,10 +5,9 @@ const Ticket = require('../models/ticket.models.js');
 
 // TICKET
 exports.ticket_create = function (req, res) {
-    let ticket = new Ticket(
+    const ticket = new Ticket(
         {
-            id : req.body.id,
-            title : req.body.title,
+            title: req.body.title,
             description : req.body.description,
             type : req.body.type,
             dateCreation : req.body.dateCreation,
@@ -20,13 +19,14 @@ exports.ticket_create = function (req, res) {
             comment : req.body.comment
         }
     );
-
+    
     ticket.save(function (err) {
         if (err) {
             return next(err);
         }
         res.send('Ticket Created successfully')
     })
+
 };
 
 // READ ----------------------------------------------------------------------------

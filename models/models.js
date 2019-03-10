@@ -9,12 +9,25 @@ const TicketSchema = mongoose.Schema({
     priority : String,
     status : String,
     author : String,
-    supportName : String
+    supportName : String,
+    comment : Number[]
 }, {
     timestamps: true
 });
 
 module.exports = mongoose.model('Ticket', TicketSchema);
+
+// Comment model
+const CommentSchema = mongoose.Schema({
+    id : Number,
+    author : String,
+    message : String,
+    date : Date
+}, {
+    timestamps: true
+});
+
+module.exports = mongoose.model('Comment', CommentSchema);
 
 // User model
 const UserSchema = mongoose.Schema({
@@ -31,7 +44,7 @@ const UserSchema = mongoose.Schema({
     timestamps: true
 });
 
-module.exports = mongoose.model('Ticket', TicketSchema);
+module.exports = mongoose.model('User', UserSchema);
 
 // Hardware model
 const HardwareSchema = mongoose.Schema({
@@ -47,7 +60,7 @@ const HardwareSchema = mongoose.Schema({
     timestamps: true
 });
 
-module.exports = mongoose.model('Ticket', TicketSchema);
+module.exports = mongoose.model('Hardware', HardwareSchema);
 
 // Software model
 const SoftwareSchema = mongoose.Schema({
@@ -59,4 +72,4 @@ const SoftwareSchema = mongoose.Schema({
     timestamps: true
 });
 
-module.exports = mongoose.model('Ticket', TicketSchema);
+module.exports = mongoose.model('Software', SoftwareSchema);

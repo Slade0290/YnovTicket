@@ -14,8 +14,8 @@ exports.ticket_create = function (req, res) {
             priority : req.body.priority,
             status : req.body.status,
             author : req.body.author,
-            supportName : req.body.supportName
-            //Commentaire ici ? ou un objet à part ?
+            supportName : req.body.supportName,
+            comment : req.body.comment
         }
     );
 
@@ -27,6 +27,24 @@ exports.ticket_create = function (req, res) {
     })
 };
 
+// COMMENT
+exports.comment_create = function (req, res) {
+    let comment = new comment(
+        {
+            id : req.body.id,
+            author : req.body.author,
+            message : req.body.message,
+            date : req.bodydate
+        }
+    );
+
+    comment.save(function (err) {
+        if (err) {
+            return next(err);
+        }
+        res.send('Comment Created successfully')
+    })
+};
 
 // USER
 exports.user_create = function (req, res) {
